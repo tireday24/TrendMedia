@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SettingTableViewController: UITableViewController {
+class HomeTableViewController: UITableViewController {
     
     var birthdayFriend = ["a", "b", "c", "d", "e"]
     

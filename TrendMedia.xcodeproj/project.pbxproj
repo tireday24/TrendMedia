@@ -16,7 +16,9 @@
 		81C174532884DE77005D18D7 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81C174522884DE77005D18D7 /* Storyboard.storyboard */; };
 		81C174552884DE9F005D18D7 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C174542884DE9F005D18D7 /* DatePickerViewController.swift */; };
 		81C174572884F110005D18D7 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81C174562884F110005D18D7 /* Home.storyboard */; };
-		81C174592884FE3C005D18D7 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C174582884FE3C005D18D7 /* SettingTableViewController.swift */; };
+		81C174592884FE3C005D18D7 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C174582884FE3C005D18D7 /* HomeTableViewController.swift */; };
+		81C1745B28852714005D18D7 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81C1745A28852714005D18D7 /* Setting.storyboard */; };
+		81C1745D2885279A005D18D7 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C1745C2885279A005D18D7 /* SettingTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +33,9 @@
 		81C174522884DE77005D18D7 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		81C174542884DE9F005D18D7 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		81C174562884F110005D18D7 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
-		81C174582884FE3C005D18D7 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		81C174582884FE3C005D18D7 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		81C1745A28852714005D18D7 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		81C1745C2885279A005D18D7 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +74,8 @@
 				81C174412884DDBA005D18D7 /* ViewController.swift */,
 				81C174432884DDBA005D18D7 /* Main.storyboard */,
 				81C174562884F110005D18D7 /* Home.storyboard */,
-				81C174582884FE3C005D18D7 /* SettingTableViewController.swift */,
+				81C174582884FE3C005D18D7 /* HomeTableViewController.swift */,
+				81C1745E288527A3005D18D7 /* Practice */,
 				81C174462884DDBC005D18D7 /* Assets.xcassets */,
 				81C174482884DDBC005D18D7 /* LaunchScreen.storyboard */,
 				81C1744B2884DDBC005D18D7 /* Info.plist */,
@@ -85,6 +90,15 @@
 				81C174542884DE9F005D18D7 /* DatePickerViewController.swift */,
 			);
 			path = pra;
+			sourceTree = "<group>";
+		};
+		81C1745E288527A3005D18D7 /* Practice */ = {
+			isa = PBXGroup;
+			children = (
+				81C1745A28852714005D18D7 /* Setting.storyboard */,
+				81C1745C2885279A005D18D7 /* SettingTableViewController.swift */,
+			);
+			path = Practice;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +164,7 @@
 				81C174532884DE77005D18D7 /* Storyboard.storyboard in Resources */,
 				81C174472884DDBC005D18D7 /* Assets.xcassets in Resources */,
 				81C174452884DDBA005D18D7 /* Main.storyboard in Resources */,
+				81C1745B28852714005D18D7 /* Setting.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,11 +175,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81C1745D2885279A005D18D7 /* SettingTableViewController.swift in Sources */,
 				81C174552884DE9F005D18D7 /* DatePickerViewController.swift in Sources */,
 				81C174422884DDBA005D18D7 /* ViewController.swift in Sources */,
 				81C1743E2884DDBA005D18D7 /* AppDelegate.swift in Sources */,
 				81C174402884DDBA005D18D7 /* SceneDelegate.swift in Sources */,
-				81C174592884FE3C005D18D7 /* SettingTableViewController.swift in Sources */,
+				81C174592884FE3C005D18D7 /* HomeTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
