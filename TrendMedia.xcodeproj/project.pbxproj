@@ -19,6 +19,7 @@
 		81C174592884FE3C005D18D7 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C174582884FE3C005D18D7 /* HomeTableViewController.swift */; };
 		81C1745B28852714005D18D7 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81C1745A28852714005D18D7 /* Setting.storyboard */; };
 		81C1745D2885279A005D18D7 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C1745C2885279A005D18D7 /* SettingTableViewController.swift */; };
+		81C1746028853378005D18D7 /* AttensionModeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C1745F28853378005D18D7 /* AttensionModeTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		81C174582884FE3C005D18D7 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		81C1745A28852714005D18D7 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		81C1745C2885279A005D18D7 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		81C1745F28853378005D18D7 /* AttensionModeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttensionModeTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				81C1745A28852714005D18D7 /* Setting.storyboard */,
+				81C1745F28853378005D18D7 /* AttensionModeTableViewController.swift */,
 				81C1745C2885279A005D18D7 /* SettingTableViewController.swift */,
 			);
 			path = Practice;
@@ -176,6 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81C1745D2885279A005D18D7 /* SettingTableViewController.swift in Sources */,
+				81C1746028853378005D18D7 /* AttensionModeTableViewController.swift in Sources */,
 				81C174552884DE9F005D18D7 /* DatePickerViewController.swift in Sources */,
 				81C174422884DDBA005D18D7 /* ViewController.swift in Sources */,
 				81C1743E2884DDBA005D18D7 /* AppDelegate.swift in Sources */,
