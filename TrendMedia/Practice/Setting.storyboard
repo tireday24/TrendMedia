@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7rH-7T-tBc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DSQ-Q6-eqL">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -25,7 +25,7 @@
                         <sections>
                             <tableViewSection headerTitle="모드 설정" footerTitle="집중 모드에서는 경고 및 알림 소리가 울리지 않습니다." id="smd-Xo-P7d">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="uHS-hs-7Qx" detailTextLabel="xfw-cs-X6L" imageView="cfL-Xl-utr" style="IBUITableViewCellStyleValue1" id="h4B-fO-2qr">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="AttensionMode" textLabel="uHS-hs-7Qx" detailTextLabel="xfw-cs-X6L" imageView="cfL-Xl-utr" style="IBUITableViewCellStyleValue1" id="h4B-fO-2qr">
                                         <rect key="frame" x="0.0" y="88.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="h4B-fO-2qr" id="p7t-Sc-qEb">
@@ -53,7 +53,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="wbb-4G-U5n" detailTextLabel="RaT-jl-N6i" imageView="D3g-tJ-JoC" style="IBUITableViewCellStyleValue1" id="DmV-Og-eEH">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="AttensionMode" textLabel="wbb-4G-U5n" detailTextLabel="RaT-jl-N6i" imageView="D3g-tJ-JoC" style="IBUITableViewCellStyleValue1" id="DmV-Og-eEH">
                                         <rect key="frame" x="0.0" y="132" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DmV-Og-eEH" id="TcL-N8-hWr">
@@ -81,7 +81,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="sqH-sO-zMW" detailTextLabel="CMX-41-VXo" imageView="5XX-OR-0Nz" style="IBUITableViewCellStyleSubtitle" id="MKj-fA-4TU">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="AttensionMode" textLabel="sqH-sO-zMW" detailTextLabel="CMX-41-VXo" imageView="5XX-OR-0Nz" style="IBUITableViewCellStyleSubtitle" id="MKj-fA-4TU">
                                         <rect key="frame" x="0.0" y="175.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MKj-fA-4TU" id="brj-KQ-z3e">
@@ -109,7 +109,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Y4L-RK-tOK" detailTextLabel="X7p-Gd-fJU" imageView="pi4-xm-6Mm" style="IBUITableViewCellStyleValue1" id="KpS-ky-Lum">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="AttensionMode" textLabel="Y4L-RK-tOK" detailTextLabel="X7p-Gd-fJU" imageView="pi4-xm-6Mm" style="IBUITableViewCellStyleValue1" id="KpS-ky-Lum">
                                         <rect key="frame" x="0.0" y="219" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KpS-ky-Lum" id="9rL-6b-FRk">
@@ -141,7 +141,7 @@
                             </tableViewSection>
                             <tableViewSection footerTitle="이 기기에서 집중 모드를 켜면 사용자의 다른 기기에서도 집중 모드가 켜집니다." id="QRs-qU-35e">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="soa-vJ-jdZ" detailTextLabel="KH3-bk-EOe" style="IBUITableViewCellStyleValue1" id="ZJ0-L8-zTS">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AttensionMode" textLabel="soa-vJ-jdZ" detailTextLabel="KH3-bk-EOe" style="IBUITableViewCellStyleValue1" id="ZJ0-L8-zTS">
                                         <rect key="frame" x="0.0" y="329.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZJ0-L8-zTS" id="8Am-s5-FbW">
@@ -173,6 +173,9 @@
                             <outlet property="delegate" destination="DSQ-Q6-eqL" id="Ofp-Ab-Sq4"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="attensionTableView" destination="GtE-Ty-5M4" id="VWg-oM-7w7"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="04V-ES-vE4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
