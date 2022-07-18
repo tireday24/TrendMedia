@@ -7,6 +7,8 @@
 
 import UIKit
 
+
+
 class SettingTableViewController: UITableViewController {
     
     var totalSettingArray = ["공지사항", "실험실", "버전정보"]
