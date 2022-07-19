@@ -18,6 +18,7 @@
 		8112CB6C28864B9900917014 /* BucketlistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8112CB6B28864B9900917014 /* BucketlistTableViewController.swift */; };
 		8112CB6E28864D9800917014 /* BucketlistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8112CB6D28864D9800917014 /* BucketlistTableViewCell.swift */; };
 		813116282886E02B0051D099 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813116272886E02B0051D099 /* SearchTableViewCell.swift */; };
+		8131162A2886E4390051D099 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813116292886E4390051D099 /* SearchTableViewController.swift */; };
 		81C1743E2884DDBA005D18D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C1743D2884DDBA005D18D7 /* AppDelegate.swift */; };
 		81C174402884DDBA005D18D7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C1743F2884DDBA005D18D7 /* SceneDelegate.swift */; };
 		81C174422884DDBA005D18D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C174412884DDBA005D18D7 /* ViewController.swift */; };
@@ -48,6 +49,7 @@
 		8112CB6B28864B9900917014 /* BucketlistTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketlistTableViewController.swift; sourceTree = "<group>"; };
 		8112CB6D28864D9800917014 /* BucketlistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketlistTableViewCell.swift; sourceTree = "<group>"; };
 		813116272886E02B0051D099 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		813116292886E4390051D099 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		81C1743A2884DDBA005D18D7 /* TrendMedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrendMedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81C1743D2884DDBA005D18D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81C1743F2884DDBA005D18D7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				81C174562884F110005D18D7 /* Home.storyboard */,
 				81C174582884FE3C005D18D7 /* HomeTableViewController.swift */,
 				8112CB5D2886401100917014 /* Search.storyboard */,
+				813116292886E4390051D099 /* SearchTableViewController.swift */,
 				813116272886E02B0051D099 /* SearchTableViewCell.swift */,
 				8112CB652886440F00917014 /* SearchViewController.swift */,
 				8112CB5F2886403A00917014 /* Trend.storyboard */,
@@ -233,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8112CB662886440F00917014 /* SearchViewController.swift in Sources */,
+				8131162A2886E4390051D099 /* SearchTableViewController.swift in Sources */,
 				81CF22E328867B7C009602F7 /* ShoppingTableViewCell.swift in Sources */,
 				8112CB6E28864D9800917014 /* BucketlistTableViewCell.swift in Sources */,
 				8112CB682886453000917014 /* UIViewController+Extension.swift in Sources */,
