@@ -24,39 +24,28 @@
                         </label>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShoppingTableViewCell" id="Bmg-Ew-KgB" customClass="ShoppingTableViewCell" customModule="TrendMedia" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="91.5" width="414" height="54.5"/>
+                                <rect key="frame" x="0.0" y="91.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="10" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bmg-Ew-KgB" id="POd-c3-7vB" customClass="ShoppingTableViewCell" customModule="TrendMedia" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="54.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textField opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zSk-K3-kgD" userLabel="shoppingTextField">
+                                        <textField opaque="NO" tag="11" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zSk-K3-kgD" userLabel="shoppingTextField">
                                             <rect key="frame" x="5" y="5" width="340" height="44.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                             <connections>
                                                 <action selector="textFieldReturn:" destination="aB1-mg-cQS" eventType="editingDidEnd" id="XWq-MR-kya"/>
                                             </connections>
                                         </textField>
-                                        <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6u-bb-44j">
+                                        <button opaque="NO" tag="12" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6u-bb-44j">
                                             <rect key="frame" x="365" y="5" width="44" height="44.5"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="44" id="AQe-ft-JSC"/>
-                                                <constraint firstAttribute="height" constant="44" id="j7u-qR-aSW"/>
-                                            </constraints>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain"/>
                                         </button>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstItem="g6u-bb-44j" firstAttribute="top" secondItem="POd-c3-7vB" secondAttribute="top" constant="5" id="0jd-jp-MUd"/>
-                                        <constraint firstItem="g6u-bb-44j" firstAttribute="leading" secondItem="zSk-K3-kgD" secondAttribute="trailing" constant="20" id="4hQ-f7-clu"/>
-                                        <constraint firstItem="zSk-K3-kgD" firstAttribute="top" secondItem="POd-c3-7vB" secondAttribute="top" constant="5" id="6Kg-Fy-2wT"/>
-                                        <constraint firstAttribute="bottom" secondItem="g6u-bb-44j" secondAttribute="bottom" constant="5" id="Eyl-AG-TiA"/>
-                                        <constraint firstItem="zSk-K3-kgD" firstAttribute="leading" secondItem="POd-c3-7vB" secondAttribute="leading" constant="5" id="P3X-rK-coJ"/>
-                                        <constraint firstAttribute="trailing" secondItem="g6u-bb-44j" secondAttribute="trailing" constant="5" id="pof-F3-1e3"/>
-                                        <constraint firstAttribute="bottom" secondItem="zSk-K3-kgD" secondAttribute="bottom" constant="5" id="pz7-M2-CXy"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="shoppingButton" destination="g6u-bb-44j" id="zHT-Zn-X2h"/>
@@ -64,47 +53,30 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="todoTableViewCell" id="3hF-Id-RCS" customClass="ShoppingTableViewCell" customModule="TrendMedia" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="146" width="414" height="54.5"/>
+                                <rect key="frame" x="0.0" y="135" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3hF-Id-RCS" id="sFn-tO-qvg" customClass="ShoppingTableViewCell" customModule="TrendMedia" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="54.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7v-TQ-UqZ">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7v-TQ-UqZ">
                                             <rect key="frame" x="69" y="16" width="276" height="22.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lID-ug-gLm">
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lID-ug-gLm">
                                             <rect key="frame" x="365" y="5" width="44" height="44.5"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="44" id="QPy-ci-ROb"/>
-                                                <constraint firstAttribute="height" constant="44" id="jCj-mY-e6M"/>
-                                            </constraints>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain"/>
                                         </button>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4aV-TO-PfE">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4aV-TO-PfE">
                                             <rect key="frame" x="5" y="5" width="44" height="44.5"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="44" id="WKt-Vx-GI2"/>
-                                                <constraint firstAttribute="width" constant="44" id="d3f-k3-JgR"/>
-                                            </constraints>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="lID-ug-gLm" secondAttribute="bottom" constant="5" id="1qz-M3-HmK"/>
-                                        <constraint firstItem="4aV-TO-PfE" firstAttribute="leading" secondItem="sFn-tO-qvg" secondAttribute="leading" constant="5" id="6c7-hv-RCd"/>
-                                        <constraint firstAttribute="trailing" secondItem="lID-ug-gLm" secondAttribute="trailing" constant="5" id="GE6-en-RkE"/>
-                                        <constraint firstItem="lID-ug-gLm" firstAttribute="top" secondItem="sFn-tO-qvg" secondAttribute="top" constant="5" id="IpX-mj-QIX"/>
-                                        <constraint firstItem="4aV-TO-PfE" firstAttribute="top" secondItem="sFn-tO-qvg" secondAttribute="top" constant="5" id="LUb-RQ-5ab"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="D7v-TQ-UqZ" secondAttribute="bottom" constant="5" id="Qge-Hs-hMd"/>
-                                        <constraint firstItem="lID-ug-gLm" firstAttribute="leading" secondItem="D7v-TQ-UqZ" secondAttribute="trailing" constant="20" id="acC-Fm-2ee"/>
-                                        <constraint firstAttribute="bottom" secondItem="4aV-TO-PfE" secondAttribute="bottom" constant="5" id="jcO-Mm-YFc"/>
-                                        <constraint firstItem="D7v-TQ-UqZ" firstAttribute="top" secondItem="sFn-tO-qvg" secondAttribute="topMargin" constant="5" id="q40-ec-cuk"/>
-                                        <constraint firstItem="D7v-TQ-UqZ" firstAttribute="leading" secondItem="4aV-TO-PfE" secondAttribute="trailing" constant="20" id="w5J-v1-aoY"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="todoButton" destination="lID-ug-gLm" id="Xlh-hL-StA"/>
