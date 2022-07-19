@@ -48,9 +48,9 @@ class SearchTableViewController: UITableViewController {
         cell.dateLabel.textColor = .black
         cell.searchTextLabel.textColor = .black
 
-        cell.nameLabel.font = .systemFont(ofSize: 12)
-        cell.dateLabel.font = .systemFont(ofSize: 8)
-        cell.searchTextLabel.font = .systemFont(ofSize: 10)
+        cell.nameLabel.font = .systemFont(ofSize: 20)
+        cell.dateLabel.font = .systemFont(ofSize: 16)
+        cell.searchTextLabel.font = .systemFont(ofSize: 18)
         
         return cell
     }
