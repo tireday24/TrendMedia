@@ -18,6 +18,10 @@ class SettingTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //높이 설정
+        
+        tableView.rowHeight = 80 // default 44
 
     }
     
@@ -59,6 +63,7 @@ class SettingTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "SettingCell")!
         
         if indexPath.section == 0 {
@@ -80,7 +85,12 @@ class SettingTableViewController: UITableViewController {
         return cell 
     }
     
-    
+    //셀의 높이(옵션, 빈도 높은) (feat. tableView.rowHeight)
+    //코드 보다 우선순위 높음 동적인 가능성이 더 높기 떄문에
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
 
   
 }
+

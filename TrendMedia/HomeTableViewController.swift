@@ -53,13 +53,66 @@ class HomeTableViewController: UITableViewController {
     
     //2. 셀의 디자인과 데이터(필수) cellForRowAt 섹션마다 셀 갯수가 다르다
     //ex. 카톡 이름, 프사, 상메 등
+    // 재사용 메커니즘
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        //복붙과 같은 효과
-        let cell = tableView.dequeueReusableCell(withIdentifier: "settingCell")!
+        print("cellforrowat", indexPath)
+
+        if indexPath.section == 2 {
+
+            let cell = tableView.dequeueReusableCell(withIdentifier: "settingCell")!
+            cell.textLabel?.text = "2번인 인덱스 섹션의 텍스트"
+            cell.textLabel?.textColor = .systemMint
+            cell.textLabel?.font = .boldSystemFont(ofSize: 20)
+            cell.detailTextLabel?.text = "디테일 레이블"
+
+            if indexPath.row % 2 == 0 {
+                cell.imageView?.image = UIImage(systemName: "star")
+                cell.backgroundColor = .lightGray
+            } else {
+                cell.imageView?.image = UIImage(systemName: "star.fill")
+                cell.backgroundColor = .white
+            }
+
+            return cell
+
+        } else  {
+
+            let cell = tableView.dequeueReusableCell(withIdentifier: "settingCell")!
+            if indexPath.section == 0 {
+
+                if indexPath.row == 0 {
+                    cell.textLabel?.text = birthdayFriend[indexPath.row]
+                } else if indexPath.row == 1 {
+                    cell.textLabel?.text = birthdayFriend[indexPath.row]
+                } else if indexPath.row == 2 {
+                    cell.textLabel?.text = birthdayFriend[indexPath.row]
+                }
+
+
+                cell.textLabel?.text = birthdayFriend[indexPath.row]
+                cell.textLabel?.textColor = .systemBlue
+                cell.textLabel?.font = .boldSystemFont(ofSize: 20)
+            } else if indexPath.section == 1 {
+                cell.textLabel?.text = "1번 인덱스 텍스트"
+                cell.textLabel?.textColor = .systemPink
+                cell.textLabel?.font = .boldSystemFont(ofSize: 20)
+            }
+
+            return cell
         
-        if indexPath.section == 0 {
-            
+        }
+    }
+}
+        
+        
+        //복붙과 같은 효과
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "settingCell")!
+//
+//
+//
+//        if indexPath.section == 0 {
+//
 //            if indexPath.row == 0 {
 //                cell.textLabel?.text = birthdayFriend[indexPath.row]
 //            } else if indexPath.row == 1 {
@@ -68,27 +121,32 @@ class HomeTableViewController: UITableViewController {
 //                cell.textLabel?.text = birthdayFriend[indexPath.row]
 //            }
 //
-            
-            cell.textLabel?.text = birthdayFriend[indexPath.row]
-            cell.textLabel?.textColor = .systemBlue
-            cell.textLabel?.font = .boldSystemFont(ofSize: 20)
-        } else if indexPath.section == 1 {
-            cell.textLabel?.text = "1번 인덱스 텍스트"
-            cell.textLabel?.textColor = .systemPink
-            cell.textLabel?.font = .boldSystemFont(ofSize: 20)
-        } else if indexPath.section == 2 {
-            cell.textLabel?.text = "2번인 인덱스 섹션의 텍스트"
-            cell.textLabel?.textColor = .systemMint
-            cell.textLabel?.font = .boldSystemFont(ofSize: 20)
-        }
-        
-        return cell
-        
-    }
-    
-    
-    
+//
+//            cell.textLabel?.text = birthdayFriend[indexPath.row]
+//            cell.textLabel?.textColor = .systemBlue
+//            cell.textLabel?.font = .boldSystemFont(ofSize: 20)
+//        } else if indexPath.section == 1 {
+//            cell.textLabel?.text = "1번 인덱스 텍스트"
+//            cell.textLabel?.textColor = .systemPink
+//            cell.textLabel?.font = .boldSystemFont(ofSize: 20)
+//        } else if indexPath.section == 2 {
+//            cell.textLabel?.text = "2번인 인덱스 섹션의 텍스트"
+//            cell.textLabel?.textColor = .systemMint
+//            cell.textLabel?.font = .boldSystemFont(ofSize: 20)
+//        }
+//
+//        return cell
+//
+//        }
+//
+//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//
+//        if indexPath.section == 0 && indexPath.row == 0 {
+//            return 400
+//        } else {
+//            return 44
+//        }
+//    }
+     
+//}
 
-   
-
-}
