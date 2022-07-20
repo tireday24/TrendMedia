@@ -16,6 +16,6 @@ struct Movie {
     var overview: String
     var rate: Double
     var imageView: [UIImage]
-    var backgroundColor: [UIColor]
+    
     
 }
