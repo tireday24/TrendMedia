@@ -20,7 +20,7 @@ class BookCollectionViewCell: UICollectionViewCell {
         bookTitle.font = .boldSystemFont(ofSize: 20)
         bookTitle.text = data.title
         bookTitle.textColor = .white
-        bookTitle.numberOfLines = 0
+        //bookTitle.numberOfLines = 0
         bookDate.text = data.releaseDate
         bookDate.textColor = .white
         bookImage.image = data.imageView[0]
