@@ -21,6 +21,12 @@ class BookCollectionViewCell: UICollectionViewCell {
         bookDate.text = data.releaseDate
         bookDate.textColor = .white
         bookImage.image = data.imageView[0]
+        bookBackgroundView.backgroundColor = .systemGray
+        bookBackgroundView.layer.cornerRadius = 10
+        bookBackgroundView.clipsToBounds = true
+        bookBackgroundView.layer.shadowColor = UIColor.black.cgColor
+        bookBackgroundView.layer.shadowOpacity = 0.9
+        bookBackgroundView.layer.shadowRadius = 10
         //bookBackgroundView.backgroundColor = [0]
     }
     

@@ -46,11 +46,7 @@ class BookCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookCollectionViewCell", for: indexPath) as! BookCollectionViewCell
         
-        cell.bookBackgroundView.backgroundColor = .systemGray
-        cell.bookBackgroundView.layer.cornerRadius = 10
-        cell.bookBackgroundView.clipsToBounds = true
-        cell.bookBackgroundView.layer.shadowColor = UIColor.black.cgColor
-        cell.bookBackgroundView.layer.shadowOpacity = 0.7
+       
         
         let data = bookList.movie[indexPath.row]
         cell.configureCell(data: data)
