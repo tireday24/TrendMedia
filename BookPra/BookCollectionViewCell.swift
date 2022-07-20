@@ -14,10 +14,13 @@ class BookCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var bookImage: UIImageView!
     @IBOutlet weak var bookBackgroundView: UIView!
     
+    var viewColor : [UIColor] = [.systemBlue, .systemRed, .systemMint, .purple, .orange, .systemPink]
+    
     func configureCell(data: Movie) {
         bookTitle.font = .boldSystemFont(ofSize: 20)
         bookTitle.text = data.title
         bookTitle.textColor = .white
+        bookTitle.numberOfLines = 0
         bookDate.text = data.releaseDate
         bookDate.textColor = .white
         bookImage.image = data.imageView[0]
@@ -27,7 +30,7 @@ class BookCollectionViewCell: UICollectionViewCell {
         bookBackgroundView.layer.shadowColor = UIColor.black.cgColor
         bookBackgroundView.layer.shadowOpacity = 0.9
         bookBackgroundView.layer.shadowRadius = 10
-        //bookBackgroundView.backgroundColor = [0]
+        bookBackgroundView.backgroundColor = viewColor.randomElement()
     }
     
 }
