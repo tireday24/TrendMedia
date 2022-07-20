@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 class SearchTableViewController: UITableViewController {
     
     var imageViewArray: [UIImage] = [#imageLiteral(resourceName: "7번방의선물.png"), #imageLiteral(resourceName: "광해.png"), #imageLiteral(resourceName: "명량.png"), #imageLiteral(resourceName: "아바타.png"), #imageLiteral(resourceName: "어벤져스엔드게임.png"), #imageLiteral(resourceName: "겨울왕국2.png")]
@@ -44,9 +43,9 @@ class SearchTableViewController: UITableViewController {
 
         cell.searchImageView.contentMode = .scaleAspectFit
 
-        cell.nameLabel.textColor = .black
-        cell.dateLabel.textColor = .black
-        cell.searchTextLabel.textColor = .black
+        cell.nameLabel.textColor = .white
+        cell.dateLabel.textColor = .white
+        cell.searchTextLabel.textColor = .white
 
         cell.nameLabel.font = .systemFont(ofSize: 20)
         cell.dateLabel.font = .systemFont(ofSize: 16)
