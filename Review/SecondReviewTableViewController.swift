@@ -37,6 +37,8 @@ class SecondReviewTableViewController: UITableViewController {
         //device 전체 높이
         return UIScreen.main.bounds.height / 8
     }
+    
+   
   
 
 }

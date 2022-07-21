@@ -8,6 +8,8 @@
 import UIKit
 
 class BucketlistTableViewCell: UITableViewCell {
+    //Identifier 만들자
+    static let identifier = "BucketlistTableViewCell"
 
     @IBOutlet weak var chexkboxButton: UIButton!
     @IBOutlet weak var bucketlistLabel: UILabel!
