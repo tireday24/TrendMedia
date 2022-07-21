@@ -29,11 +29,14 @@ class BookCollectionViewController: UICollectionViewController {
         //2. 스토리보드 안에 뷰컨트롤러로 가져옴
         let viewControllerPick = storyboardFile.instantiateViewController(withIdentifier: "GlassesViewController") as! GlassesViewController
         
+        //2.5 네비게이션 임베디드
+        let navigationControllerPick = UINavigationController(rootViewController: viewControllerPick)
+        
         //2.5 present시  화면 전환 방식 설정 (옵션)
-        viewControllerPick.modalPresentationStyle = .fullScreen
+        navigationControllerPick.modalPresentationStyle = .fullScreen
         
         //3. 어떤 방식으로 띄워줄건가
-        self.present(viewControllerPick, animated: true)
+        self.present(navigationControllerPick, animated: true)
     }
     
     

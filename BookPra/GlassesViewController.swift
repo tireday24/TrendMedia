@@ -15,8 +15,7 @@ class GlassesViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.title = "검색"
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(closeButtonClicked))
-
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(closeButtonClicked)) //target self 내 화면에서 하겠다
         
     }
     
