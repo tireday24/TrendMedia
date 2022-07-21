@@ -13,7 +13,7 @@ class WebViewController: UIViewController {
         super.viewDidLoad()
 
         
-        navigationItem.title = "내용"
+        navigationItem.title = "웹뷰"
        
     }
 

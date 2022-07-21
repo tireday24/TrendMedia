@@ -85,7 +85,7 @@ class BookCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("didselectItemAt") // 동작하지 않는다면? 1. TableView가 noSelection 2. 셀 위에 전체 버튼
         let sb = UIStoryboard(name: "BookProject", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "GlassesTableViewController") as! GlassesTableViewController
+        let vc = sb.instantiateViewController(withIdentifier: "SearchBookViewController") as! SearchBookViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
