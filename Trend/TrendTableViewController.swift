@@ -28,6 +28,7 @@ class TrendTableViewController: UITableViewController {
         //2. 스토리보드 안에 뷰컨트롤러로 가져옴
         let viewControllerPick = storyboardFile.instantiateViewController(withIdentifier: BucketlistTableViewController.identifier) as! BucketlistTableViewController
         
+        viewControllerPick.textFieldPlaceholder = "영화"
         //3. 어떤 방식으로 띄워줄건가
         self.present(viewControllerPick, animated: true)
         
@@ -41,6 +42,8 @@ class TrendTableViewController: UITableViewController {
         
         //2. 스토리보드 안에 뷰컨트롤러로 가져옴
         let viewControllerPick = storyboardFile.instantiateViewController(withIdentifier: BucketlistTableViewController.identifier) as! BucketlistTableViewController
+        
+        viewControllerPick.textFieldPlaceholder = "드라마"
         
         //2.5 present시  화면 전환 방식 설정 (옵션)
         viewControllerPick.modalPresentationStyle = .fullScreen
@@ -56,6 +59,8 @@ class TrendTableViewController: UITableViewController {
         
         //2. 스토리보드 안에 뷰컨트롤러로 가져옴
         let viewControllerPick = storyboardFile.instantiateViewController(withIdentifier: BucketlistTableViewController.identifier) as! BucketlistTableViewController
+        
+        viewControllerPick.textFieldPlaceholder = "도서"
         
         //2.5 네비게이션 임베디드
         let navigationControllerPick = UINavigationController(rootViewController: viewControllerPick)

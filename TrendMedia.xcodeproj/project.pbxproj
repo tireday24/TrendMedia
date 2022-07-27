@@ -183,8 +183,8 @@
 				8154F898288917E8005E1F23 /* GlassesViewController.swift */,
 				8154F894288910FA005E1F23 /* GlassesTableViewController.swift */,
 				81414F8F2889E571007A60CD /* SearchBookViewController.swift */,
-				8154F8962889110B005E1F23 /* GlassesTableViewCell.swift */,
 				8154F89A28891F81005E1F23 /* WebViewController.swift */,
+				8154F8962889110B005E1F23 /* GlassesTableViewCell.swift */,
 			);
 			path = BookPra;
 			sourceTree = "<group>";

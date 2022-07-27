@@ -15,5 +15,5 @@ class BucketlistTableViewCell: UITableViewCell {
     @IBOutlet weak var bucketlistLabel: UILabel!
     @IBOutlet weak var titleLable: UILabel!
     
-    
+    //액션 넣으면 모든 버튼이 다 눌림 , 셀을 재사용하기 때문에
 }

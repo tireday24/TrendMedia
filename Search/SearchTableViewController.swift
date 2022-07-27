@@ -9,47 +9,43 @@ import UIKit
 
 class SearchTableViewController: UITableViewController {
     
-    var imageViewArray: [UIImage] = [#imageLiteral(resourceName: "7번방의선물.png"), #imageLiteral(resourceName: "광해.png"), #imageLiteral(resourceName: "명량.png"), #imageLiteral(resourceName: "아바타.png"), #imageLiteral(resourceName: "어벤져스엔드게임.png"), #imageLiteral(resourceName: "겨울왕국2.png")]
-    var movieNameArray = ["명량", "아바타", "어벤져스엔드게임", "7번방의 선물", "겨울왕국2", "광해"]
-    var dateArray = ["2022.07.01", "2022.07.02", "2022.07.03", "2022.07.04", "2022.07.05", "2022.07.06", "2022.07.07"]
-    var textTextArray = ["a", "aa", "aaa", "aaaa", "aaaaa", "aaaaa"]
+    var movieList = MovieInfo()
 
     override func viewDidLoad() {
         print("viewdidload")
         super.viewDidLoad()
-
-        tableView.rowHeight = 60
-        tableView.backgroundColor = .black
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "처음으로", style: .plain, target: self, action: #selector(resetButtonClicked))
+        
+    }
+    
+    @objc func resetButtonClicked() {
+        
+        //iOS 13+ SceneDelegate 쓸 때 동작하는 코드
+        //appdelegate -> scenedelegate first 처음 의미
+        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        //sceneDelegate -> Scenedelegate 전체 거기서 delegate로 감 기존에 쌓여있던 화면들이 메모리에서 내려감
+        
+        let sb = UIStoryboard(name: "Trend", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        
+        let sceneDelegate = windowScene?.delegate as? SceneDelegate
+        sceneDelegate?.window?.rootViewController = vc
+        sceneDelegate?.window?.makeKeyAndVisible()
         
     }
     
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return imageViewArray.count
-    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return imageViewArray.count
+        return movieList.movie.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchTableViewCell", for: indexPath) as! SearchTableViewCell
-
-        //row 설정
-        cell.searchImageView.image = imageViewArray[indexPath.row]
-        cell.nameLabel.text = movieNameArray[indexPath.row]
-        cell.dateLabel.text = dateArray[indexPath.row]
-        cell.searchTextLabel.text = textTextArray[indexPath.row]
-
-        cell.searchImageView.contentMode = .scaleAspectFit
-
-        cell.nameLabel.textColor = .white
-        cell.dateLabel.textColor = .white
-        cell.searchTextLabel.textColor = .white
-
-        cell.nameLabel.font = .systemFont(ofSize: 20)
-        cell.dateLabel.font = .systemFont(ofSize: 16)
-        cell.searchTextLabel.font = .systemFont(ofSize: 18)
+        
+        let data = movieList.movie[indexPath.row]
+        cell.configureCell(data: data)
         
         return cell
     }
@@ -63,6 +59,11 @@ class SearchTableViewController: UITableViewController {
         print("didselectRowAt") // 동작하지 않는다면? 1. TableView가 noSelection 2. 셀 위에 전체 버튼
         let sb = UIStoryboard(name: "Trend", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "RecommandCollectionViewController") as! RecommandCollectionViewController
+        
+        //2. 값 전달 - vc가 가지고 있는 프로퍼티에 데이터 넣기(초기화)
+        vc.movieData = movieList.movie[indexPath.row]
+        
+        
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

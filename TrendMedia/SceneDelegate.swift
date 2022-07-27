@@ -9,14 +9,52 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
+    //수많은 뷰 중에 어떤 뷰를 보여줄지 결정해주는 프로퍼티
     var window: UIWindow?
 
 
+    //시작 화면전에 통제 가능
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        
+        //true이면 ViewController , false SearchTableViewController
+        //SceneDelegate에 있으면 안되는 코드 -> 시작할때마다 false
+        //UserDefaults.standard.set(false, forKey: "First") -> 다른 화면에 배치해야한다
+        //UserDefaults.standard.set(false, forKey: "First")
+        
+        guard let scene = (scene as? UIWindowScene) else { return }
+//        window = UIWindow(windowScene: scene)
+//        
+//        if UserDefaults.standard.bool(forKey: "First") {
+//            
+//            
+//            //첫번째 화면 구성
+//            let sb = UIStoryboard(name: "Trend", bundle: nil)
+//            let vc = sb.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+//            
+//            //코드로 루트뷰컨트롤러 지정 가능
+//            window?.rootViewController = vc
+//            
+//            //중요 디바이스 화면에 비춰주는 역할
+//            window?.makeKeyAndVisible()
+//        } else {
+//            
+//            window = UIWindow(windowScene: scene)
+//            
+//            //첫번째 화면 구성
+//            let sb = UIStoryboard(name: "Search", bundle: nil)
+//            let vc = sb.instantiateViewController(withIdentifier: "SearchTableViewController") as! SearchTableViewController
+//            
+//            //코드로 루트뷰컨트롤러 지정 가능 , 네비게이션컨트롤러 임베디드
+//            
+//            
+//            //중요 디바이스 화면에 비춰주는 역할
+//            window?.makeKeyAndVisible()
+//            
+//        }
+//        
+//        window?.makeKeyAndVisible()
+        
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

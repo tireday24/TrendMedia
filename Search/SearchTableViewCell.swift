@@ -14,4 +14,13 @@ class SearchTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var searchTextLabel: UILabel!
     
+    func configureCell(data: Movie) {
+        nameLabel.font = .boldSystemFont(ofSize: 15)
+        nameLabel.text = data.title
+        dateLabel.text = "\(data.releaseDate) | \(data.runtime) |\(data.rate)점"
+        searchTextLabel.text = data.overview
+        searchTextLabel.numberOfLines = 0
+        
+    }
+    
 }
