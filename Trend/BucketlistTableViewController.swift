@@ -139,16 +139,16 @@ class BucketlistTableViewController: UITableViewController {
         
         //배열 인덱스를 찾아서 done을 바꿔야 된다 테이블 뷰 갱신
         //가지고 있는 값을 반대의 값으로 표현해준다
-        
 //        if list[sender.tag].done {
-//            sender.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+//            sender.setImage(UIImage(systemName: ""), for: .normal)
 //            list[sender.tag].done = false
 //        } else {
-//            sender.setImage(UIImage(systemName: "checkmark.square.fill"), for: .normal)
+//            sender.setImage(UIImage(systemName: ""), for: .normal)
 //            list[sender.tag].done = true
 //        }
         
         list[sender.tag].done = !list[sender.tag].done
+        
         //셀에 대한 갱신
         tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .fade)
         

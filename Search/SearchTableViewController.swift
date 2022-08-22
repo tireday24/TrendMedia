@@ -15,26 +15,8 @@ class SearchTableViewController: UITableViewController {
         print("viewdidload")
         super.viewDidLoad()
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "처음으로", style: .plain, target: self, action: #selector(resetButtonClicked))
         
     }
-    
-    @objc func resetButtonClicked() {
-        
-        //iOS 13+ SceneDelegate 쓸 때 동작하는 코드
-        //appdelegate -> scenedelegate first 처음 의미
-        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
-        //sceneDelegate -> Scenedelegate 전체 거기서 delegate로 감 기존에 쌓여있던 화면들이 메모리에서 내려감
-        
-        let sb = UIStoryboard(name: "Trend", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-        
-        let sceneDelegate = windowScene?.delegate as? SceneDelegate
-        sceneDelegate?.window?.rootViewController = vc
-        sceneDelegate?.window?.makeKeyAndVisible()
-        
-    }
-    
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

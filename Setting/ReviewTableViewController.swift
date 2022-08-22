@@ -7,9 +7,6 @@
 
 import UIKit
 
-
-
-
 //CaseIterable: 프로토콜, 배열처럼 열거형을 활용할 수 있는 특성
 enum SettingOptions: Int, CaseIterable {
     case total, personal, others // 섹션

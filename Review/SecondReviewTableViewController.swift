@@ -15,7 +15,7 @@ class SecondReviewTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       
+        
     }
     
     //셀의 갯수

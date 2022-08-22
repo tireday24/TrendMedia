@@ -2,7 +2,7 @@
 import Foundation
 import UIKit
 
-struct MovieInfo {
+struct MovieInfo{
     
     
     let movie: [Movie] = [

@@ -6,132 +6,102 @@
 //
 
 import UIKit
-enum todoText: Int, CaseIterable {
-    case textField, label
-    
-    var sectionTitle : String {
-        switch self {
-        case .textField:
-            return ""
-        case .label:
-            return ""
-        }
-    }
-    
-    var rowTitle : [String] {
-        switch self {
-        case .textField:
-            return [""]
-        case .label:
-            return ["그립톡 구매하기", "사이다 구매", "아이패드 케이스 최저가 알아보기", "양말"]
-        }
-    }
-}
+
+import RealmSwift
+import SnapKit
+import Then
 
 
 class ShoppingTableViewController: UITableViewController {
-
-    @IBOutlet weak var shoppingLabel: UILabel!
     
+    @IBOutlet weak var todoTextField: UITextField!
     
+    let localRealm = try! Realm()
     
-    var labelArray = ["그립톡 구매하기", "사이다 구매", "아이패드 케이스 최저가 알아보기", "양말"]
+    var todo: Results<TodoList>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        todo = localRealm.objects(TodoList.self).sorted(byKeyPath: "date", ascending: true)
+        print("Realm is located at:", localRealm.configuration.fileURL!)
         tableView.rowHeight = 80
-        labelDesign()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print(#function)
+        //화면 갱신은 화면 전환 코드 및 생명 주기 실행 점검 필요!
+        //present, overCurrentContext, overFullScreen > viewWillAppear X
+        todo = localRealm.objects(TodoList.self).sorted(byKeyPath: "date", ascending: false)
+        tableView.reloadData()
     }
     
     
-    // 텍스트필드에 텍스트 추가시 자동 추가
-    @IBAction func textFieldReturn(_ sender: UITextField) {
-        labelArray.append(sender.text!)
-        tableView.reloadData()
+    
+    @IBAction func addButtonClicked(_ sender: UIButton) {
+        
+        let todo = TodoList(todo: todoTextField.text ?? "데이터를 입력 해주세요", date: Date())
+        
+        try! localRealm.write {
+            localRealm.add(todo) //여기서 Create가 일어난다 왜 try? 조금 더 안전하게 데이터를 저장 추가 가져오기 위함
+            print("Realm Succeed")
+            dismiss(animated: true)
+            self.tableView.reloadData()
+        }
+        
+        view.endEditing(true)
         
     }
     
-    //"쇼핑" 레이블 디자인
-    func labelDesign() {
-        shoppingLabel.text = "쇼핑"
-        shoppingLabel.textAlignment = .center
-        shoppingLabel.textColor = .black
-        shoppingLabel.font = .boldSystemFont(ofSize: 30)
-    }
     
-    
-    //섹션 갯수
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
-    }
     
     //row 갯수
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return 1
-        } else if section == 1 {
-            return 4
-        }
-        
-        return 0
+        return todo.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ShoppingTableViewCell", for: indexPath) as! ShoppingTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: todoTableViewCell.identifier, for: indexPath) as? todoTableViewCell else { return UITableViewCell()}
+        cell.todoLable.text = todo[indexPath.row].todo
+        cell.configureCell()
+        cell.checkButton.addTarget(self, action: #selector(checkBoxButtonClicked), for: .touchUpInside)
+        cell.checkButton.isSelected = todo[indexPath.row].check
+        cell.starButton.addTarget(self, action: #selector(starButtonClicked), for: .touchUpInside)
+        cell.checkButton.isSelected = todo[indexPath.row].star
 
-            cell.shoppingTextField.attributedPlaceholder = NSAttributedString(string: "무엇을 구매하실 건가요", attributes: [NSAttributedString.Key.foregroundColor : UIColor.systemGray])
-            cell.shoppingButton.setTitle("추가", for: .normal)
-            cell.shoppingButton.setTitleColor(.black, for: .normal)
-            cell.shoppingButton.backgroundColor = .gray
-            cell.shoppingButton.layer.cornerRadius = 10
-            cell.shoppingButton.clipsToBounds = true
-            
-            return cell
-                
-        } else if indexPath.section == 1 {
-            
-            let cell = tableView.dequeueReusableCell(withIdentifier: "todoTableViewCell", for: indexPath) as! ShoppingTableViewCell
-
-            cell.todoLabel.text = labelArray[indexPath.row]
-            cell.todoLabel.textColor = .black
-            cell.todoLabel.font = .boldSystemFont(ofSize: 20)
-
-            if indexPath.row == 0 {
-
-                cell.todoImageView.image = UIImage(systemName: "checkmark.square.fill")
-                cell.backgroundColor = .white
-            } else {
-                cell.todoImageView.image = UIImage(systemName: "checkmark.square")
-                cell.backgroundColor = .white
-            }
-
-            if indexPath.row == 0 {
-                cell.todoButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
-                cell.backgroundColor = .white
-            } else {
-                cell.todoButton.setImage(UIImage(systemName: "star"), for: .normal)
-                cell.backgroundColor = .white
-            }
-            
-            return cell
-        } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "todoTableViewCell", for: indexPath) as! ShoppingTableViewCell
-            return cell
-        }
-    }
-    
-    // 스와이프 옆에서 제거
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            labelArray.remove(at: indexPath.row)
-            tableView.reloadData()
-        }
-    }
-    
         
-   
-
+        return cell
+        
+    // 스와이프 옆에서 제거
+//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            labelArray.remove(at: indexPath.row)
+//            tableView.reloadData()
+//        }
+//    }
+}
+    @objc func checkBoxButtonClicked( _ sender: UIButton) {
+        if sender.isSelected {
+            sender.isSelected = false
+            sender.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+        } else {
+            sender.isSelected = true
+            sender.setImage(UIImage(systemName: "checkmark.square.fill"), for: .normal)
+        }
+       
+    }
+    
+    @objc func starButtonClicked( _ sender: UIButton) {
+        if sender.isSelected {
+            sender.isSelected = false
+            sender.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        } else {
+            sender.isSelected = true
+            sender.setImage(UIImage(systemName: "star"), for: .normal)
+        }
+    }
+    
+    
 }
