@@ -18,7 +18,12 @@ class ShoppingTableViewController: UITableViewController {
     
     let localRealm = try! Realm()
     
-    var todo: Results<TodoList>!
+    var todo: Results<TodoList>! {
+        didSet {
+            tableView.reloadData()
+            print("Tasks Changed")
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,10 +36,11 @@ class ShoppingTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print(#function)
-        //화면 갱신은 화면 전환 코드 및 생명 주기 실행 점검 필요!
-        //present, overCurrentContext, overFullScreen > viewWillAppear X
+        fetchRealm()
+    }
+    
+    func fetchRealm() {
         todo = localRealm.objects(TodoList.self).sorted(byKeyPath: "date", ascending: false)
-        tableView.reloadData()
     }
     
     
@@ -66,10 +72,15 @@ class ShoppingTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: todoTableViewCell.identifier, for: indexPath) as? todoTableViewCell else { return UITableViewCell()}
         cell.todoLable.text = todo[indexPath.row].todo
         cell.configureCell()
-        cell.checkButton.addTarget(self, action: #selector(checkBoxButtonClicked), for: .touchUpInside)
-        cell.checkButton.isSelected = todo[indexPath.row].check
-        cell.starButton.addTarget(self, action: #selector(starButtonClicked), for: .touchUpInside)
-        cell.checkButton.isSelected = todo[indexPath.row].star
+        
+        cell.checkButton.tag = indexPath.row
+        let check = todo[indexPath.row].check ? "checkmark.square.fill" : "checkmark.square"
+        cell.checkButton.setImage(UIImage(systemName: check), for: .normal)
+        cell.checkButton.addTarget(self, action: #selector(checkButtonClicked(_:)), for: .touchUpInside)
+        cell.starButton.tag = indexPath.row
+        let star = todo[indexPath.row].star ? "star.fill" : "star"
+        cell.starButton.setImage(UIImage(systemName: star), for: .normal)
+        cell.starButton.addTarget(self, action: #selector(starButtonClicked(_:)), for: .touchUpInside)
 
         
         return cell
@@ -91,26 +102,32 @@ class ShoppingTableViewController: UITableViewController {
         
         
 }
-    @objc func checkBoxButtonClicked( _ sender: UIButton) {
-        if sender.isSelected {
-            sender.isSelected = false
-            sender.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
-        } else {
-            sender.isSelected = true
-            sender.setImage(UIImage(systemName: "checkmark.square.fill"), for: .normal)
+    
+    @objc func checkButtonClicked(_ sender: UIButton) {
+        try! localRealm.write {
+            todo[sender.tag].check = !todo[sender.tag].check
+            self.localRealm.create(TodoList.self, value: ["objectId": self.todo[sender.tag].objectId, "todo": "완료"], update: .modified)
         }
-       
+        tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .fade)
     }
     
-    @objc func starButtonClicked( _ sender: UIButton) {
-        if sender.isSelected {
-            sender.isSelected = false
-            sender.setImage(UIImage(systemName: "star.fill"), for: .normal)
-        } else {
-            sender.isSelected = true
-            sender.setImage(UIImage(systemName: "star"), for: .normal)
+    @objc func starButtonClicked(_ sender: UIButton) {
+        try! localRealm.write {
+            todo[sender.tag].star = !todo[sender.tag].star
         }
+        tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .fade)
     }
-    
     
 }
+//
+//            try! self.localRealm.write{
+//                self.localRealm.create(TodoList.self, value: ["objectId": self.todo[sender.tag].objectId, "todo": "완료"], update: .modified)
+//
+//                print("Realm Update Succeed, reloadRows 필요")
+//            }
+        
+        
+       
+    
+   
+ 
