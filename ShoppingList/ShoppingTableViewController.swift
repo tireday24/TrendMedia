@@ -25,12 +25,33 @@ class ShoppingTableViewController: UITableViewController {
         }
     }
     
+    var menuItems: [UIAction] {
+        return [
+            UIAction(title: "제목순", image: UIImage(systemName: "pencil"), handler: {  _ in
+                self.todo = self.localRealm.objects(TodoList.self).sorted(byKeyPath: "todo", ascending: true)
+            }),
+            UIAction(title: "즐겨찾기순", image: UIImage(systemName: "star"), handler: { _ in
+                self.todo = self.localRealm.objects(TodoList.self).sorted(byKeyPath: "star", ascending: true)
+            }),
+            UIAction(title: "할일순", image: UIImage(systemName: "checkmark"), handler: { _ in
+                self.todo = self.localRealm.objects(TodoList.self).sorted(byKeyPath: "check", ascending: true)
+            })
+        ]
+    }
+    
+    var menu: UIMenu {
+        return UIMenu(title: "", image: nil, identifier: nil, options: [], children: menuItems)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         todo = localRealm.objects(TodoList.self).sorted(byKeyPath: "date", ascending: true)
         print("Realm is located at:", localRealm.configuration.fileURL!)
         tableView.rowHeight = 80
+        
+        let navi = navigationItem
+        navi.leftBarButtonItem = UIBarButtonItem(title: "", image: UIImage(systemName: "line.3.horizontal"), primaryAction: nil, menu: menu)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,7 +64,11 @@ class ShoppingTableViewController: UITableViewController {
         todo = localRealm.objects(TodoList.self).sorted(byKeyPath: "date", ascending: false)
     }
     
-    
+    @objc func sortButtonClicked() {
+        
+        
+        todo = localRealm.objects(TodoList.self).sorted(byKeyPath: "todo", ascending: true)
+    }
     
     @IBAction func addButtonClicked(_ sender: UIButton) {
         
@@ -119,13 +144,7 @@ class ShoppingTableViewController: UITableViewController {
     }
     
 }
-//
-//            try! self.localRealm.write{
-//                self.localRealm.create(TodoList.self, value: ["objectId": self.todo[sender.tag].objectId, "todo": "완료"], update: .modified)
-//
-//                print("Realm Update Succeed, reloadRows 필요")
-//            }
-        
+
         
        
     
