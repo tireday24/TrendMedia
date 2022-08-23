@@ -74,13 +74,22 @@ class ShoppingTableViewController: UITableViewController {
         
         return cell
         
-    // 스와이프 옆에서 제거
-//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            labelArray.remove(at: indexPath.row)
-//            tableView.reloadData()
-//        }
-//    }
+    }
+        
+
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            try! localRealm.write{
+                localRealm.delete(todo[indexPath.row])
+            }
+            tableView.reloadData()
+    }
+        
+        
 }
     @objc func checkBoxButtonClicked( _ sender: UIButton) {
         if sender.isSelected {
