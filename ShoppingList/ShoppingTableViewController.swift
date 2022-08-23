@@ -10,6 +10,7 @@ import UIKit
 import RealmSwift
 import SnapKit
 import Then
+import CoreMedia
 
 
 class ShoppingTableViewController: UITableViewController {
@@ -59,6 +60,7 @@ class ShoppingTableViewController: UITableViewController {
         print(#function)
         fetchRealm()
     }
+
     
     func fetchRealm() {
         todo = localRealm.objects(TodoList.self).sorted(byKeyPath: "date", ascending: false)
@@ -90,6 +92,15 @@ class ShoppingTableViewController: UITableViewController {
     //row 갯수
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return todo.count
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let sb = UIStoryboard(name: "SecondReview", bundle: nil)
+        guard let vc = sb.instantiateViewController(withIdentifier: DataViewController.identifier) as? DataViewController else { return }
+        vc.objectId = todo[indexPath.row].objectId
+        print(todo[indexPath.row].objectId, "ffffff")
+        navigationController?.pushViewController(vc, animated: true)
+       
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
