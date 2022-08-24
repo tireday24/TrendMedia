@@ -11,6 +11,7 @@ import RealmSwift
 import SnapKit
 import Then
 import CoreMedia
+import Kingfisher
 
 
 class ShoppingTableViewController: UITableViewController {
@@ -18,6 +19,8 @@ class ShoppingTableViewController: UITableViewController {
     @IBOutlet weak var todoTextField: UITextField!
     
     let localRealm = try! Realm()
+    
+    var imageUrl = ""
     
     var todo: Results<TodoList>! {
         didSet {
@@ -74,7 +77,17 @@ class ShoppingTableViewController: UITableViewController {
     
     @IBAction func addButtonClicked(_ sender: UIButton) {
         
-        let todo = TodoList(todo: todoTextField.text ?? "데이터를 입력 해주세요", date: Date())
+        ImageSearchAPIManager.shared.fetchImageData(query: todoTextField.text ?? "데이터 없음") { item in
+            
+            self.imageUrl = item
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        print(imageUrl, "fffffff")
+        let todo = TodoList(todo: todoTextField.text ?? "데이터를 입력 해주세요", date: Date(), photo: imageUrl)
+        
         
         try! localRealm.write {
             localRealm.add(todo) //여기서 Create가 일어난다 왜 try? 조금 더 안전하게 데이터를 저장 추가 가져오기 위함
@@ -83,11 +96,10 @@ class ShoppingTableViewController: UITableViewController {
             self.tableView.reloadData()
         }
         
+      
         view.endEditing(true)
         
     }
-    
-    
     
     //row 갯수
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -96,19 +108,24 @@ class ShoppingTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "SecondReview", bundle: nil)
-        guard let vc = sb.instantiateViewController(withIdentifier: DataViewController.identifier) as? DataViewController else { return }
+        guard let vc = sb.instantiateViewController(withIdentifier: DetailViewController.reuseIdentifier) as? DetailViewController else { return }
         vc.objectId = todo[indexPath.row].objectId
-        print(todo[indexPath.row].objectId, "ffffff")
+        
+        guard let cell = tableView.cellForRow(at: indexPath) as? todoTableViewCell else {return}
+        saveImageToDocument(fileName: "\(todo![indexPath.item].objectId).jpg", image: cell.photoImageView.image!)
+
         navigationController?.pushViewController(vc, animated: true)
        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: todoTableViewCell.identifier, for: indexPath) as? todoTableViewCell else { return UITableViewCell()}
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: todoTableViewCell.reuseIdentifier, for: indexPath) as? todoTableViewCell else { return UITableViewCell()}
         cell.todoLable.text = todo[indexPath.row].todo
         cell.configureCell()
         
+        let url = URL(string: todo[indexPath.row].photo ?? "데이터 없음")
+        cell.photoImageView.kf.setImage(with: url)
         cell.checkButton.tag = indexPath.row
         let check = todo[indexPath.row].check ? "checkmark.square.fill" : "checkmark.square"
         cell.checkButton.setImage(UIImage(systemName: check), for: .normal)
@@ -117,7 +134,6 @@ class ShoppingTableViewController: UITableViewController {
         let star = todo[indexPath.row].star ? "star.fill" : "star"
         cell.starButton.setImage(UIImage(systemName: star), for: .normal)
         cell.starButton.addTarget(self, action: #selector(starButtonClicked(_:)), for: .touchUpInside)
-
         
         return cell
         
@@ -130,6 +146,9 @@ class ShoppingTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            
+            removeImageFromDocument(fileName: "\(todo[indexPath.row].objectId).jpg")
+            
             try! localRealm.write{
                 localRealm.delete(todo[indexPath.row])
             }

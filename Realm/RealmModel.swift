@@ -14,13 +14,15 @@ class TodoList: Object {
     @Persisted var check: Bool // check 필수
     @Persisted var star: Bool // star 필수
     @Persisted var date: Date
+    @Persisted var photo: String?
     
     @Persisted(primaryKey: true) var objectId: ObjectId
    
-    convenience init(todo: String, date: Date) {
+    convenience init(todo: String, date: Date, photo: String?) {
         self.init()
         self.todo = todo
         self.date = date
+        self.photo = photo
         self.check = false
         self.star = false
     }

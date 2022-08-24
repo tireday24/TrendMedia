@@ -9,12 +9,10 @@ import UIKit
 
 class todoTableViewCell: UITableViewCell {
     
-    static let identifier = "todoTableViewCell"
-
     @IBOutlet weak var checkButton: UIButton!
     @IBOutlet weak var todoLable: UILabel!
     @IBOutlet weak var starButton: UIButton!
-    
+    @IBOutlet weak var photoImageView: UIImageView!
     
     func configureCell() {
         checkButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)

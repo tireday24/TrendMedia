@@ -17,7 +17,7 @@
 		8112CB6A2886478C00917014 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8112CB692886478C00917014 /* UITextField+Extension.swift */; };
 		8112CB6C28864B9900917014 /* BucketlistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8112CB6B28864B9900917014 /* BucketlistTableViewController.swift */; };
 		8112CB6E28864D9800917014 /* BucketlistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8112CB6D28864D9800917014 /* BucketlistTableViewCell.swift */; };
-		81234ABB28B4AFA2003C8A3B /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81234ABA28B4AFA2003C8A3B /* DataViewController.swift */; };
+		81234ABB28B4AFA2003C8A3B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81234ABA28B4AFA2003C8A3B /* DetailViewController.swift */; };
 		813116282886E02B0051D099 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813116272886E02B0051D099 /* SearchTableViewCell.swift */; };
 		8131162A2886E4390051D099 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813116292886E4390051D099 /* SearchTableViewController.swift */; };
 		81414F902889E571007A60CD /* SearchBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81414F8F2889E571007A60CD /* SearchBookViewController.swift */; };
@@ -33,6 +33,7 @@
 		814169022887C1F000A792A6 /* BookProject.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 814169012887C1F000A792A6 /* BookProject.storyboard */; };
 		814169042887C20300A792A6 /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814169032887C20300A792A6 /* BookCollectionViewCell.swift */; };
 		814169062887C21500A792A6 /* BookCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814169052887C21500A792A6 /* BookCollectionViewController.swift */; };
+		8147FFA228B6422000553432 /* FileManager + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8147FFA128B6422000553432 /* FileManager + Extension.swift */; };
 		8154F8892888E752005E1F23 /* TrendTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8154F8882888E752005E1F23 /* TrendTableViewController.swift */; };
 		8154F895288910FA005E1F23 /* GlassesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8154F894288910FA005E1F23 /* GlassesTableViewController.swift */; };
 		8154F8972889110B005E1F23 /* GlassesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8154F8962889110B005E1F23 /* GlassesTableViewCell.swift */; };
@@ -57,6 +58,20 @@
 		81C1745B28852714005D18D7 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81C1745A28852714005D18D7 /* Setting.storyboard */; };
 		81C1745D2885279A005D18D7 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C1745C2885279A005D18D7 /* SettingTableViewController.swift */; };
 		81C1746028853378005D18D7 /* AttensionModeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C1745F28853378005D18D7 /* AttensionModeTableViewController.swift */; };
+		81C51D6628B5F07200305D47 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C51D6528B5F07200305D47 /* BaseViewController.swift */; };
+		81C51D6828B5F07A00305D47 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C51D6728B5F07A00305D47 /* BaseView.swift */; };
+		81C51D6E28B5F25100305D47 /* Reuseable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C51D6D28B5F25100305D47 /* Reuseable.swift */; };
+		81C51D7028B5F2F700305D47 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C51D6F28B5F2F700305D47 /* DetailView.swift */; };
+		81C51D7328B5F5B400305D47 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C51D7228B5F5B400305D47 /* Color.swift */; };
+		81C51D7528B5F5BC00305D47 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C51D7428B5F5BC00305D47 /* Button.swift */; };
+		81C51D7728B5F5CC00305D47 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C51D7628B5F5CC00305D47 /* Constants.swift */; };
+		81C51D7928B5F61F00305D47 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C51D7828B5F61F00305D47 /* ImageView.swift */; };
+		81C51D7D28B6059800305D47 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 81C51D7C28B6059800305D47 /* .gitignore */; };
+		81C51D7F28B6065A00305D47 /* APIKEY.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C51D7E28B6065A00305D47 /* APIKEY.swift */; };
+		81C51D8228B6075E00305D47 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C51D8128B6075E00305D47 /* APIManager.swift */; };
+		81C51D8528B607B200305D47 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 81C51D8428B607B200305D47 /* Alamofire */; };
+		81C51D8828B607BF00305D47 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 81C51D8728B607BF00305D47 /* SwiftyJSON */; };
+		81C51D8B28B60AEB00305D47 /* Lable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C51D8A28B60AEB00305D47 /* Lable.swift */; };
 		81CF22DF28867B50009602F7 /* Shopping.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81CF22DE28867B50009602F7 /* Shopping.storyboard */; };
 		81CF22E128867B68009602F7 /* ShoppingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CF22E028867B68009602F7 /* ShoppingTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -72,7 +87,7 @@
 		8112CB692886478C00917014 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		8112CB6B28864B9900917014 /* BucketlistTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketlistTableViewController.swift; sourceTree = "<group>"; };
 		8112CB6D28864D9800917014 /* BucketlistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketlistTableViewCell.swift; sourceTree = "<group>"; };
-		81234ABA28B4AFA2003C8A3B /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
+		81234ABA28B4AFA2003C8A3B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		813116272886E02B0051D099 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		813116292886E4390051D099 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		81414F8F2889E571007A60CD /* SearchBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +101,7 @@
 		814169012887C1F000A792A6 /* BookProject.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BookProject.storyboard; sourceTree = "<group>"; };
 		814169032887C20300A792A6 /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
 		814169052887C21500A792A6 /* BookCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewController.swift; sourceTree = "<group>"; };
+		8147FFA128B6422000553432 /* FileManager + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager + Extension.swift"; sourceTree = "<group>"; };
 		8154F8882888E752005E1F23 /* TrendTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendTableViewController.swift; sourceTree = "<group>"; };
 		8154F894288910FA005E1F23 /* GlassesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassesTableViewController.swift; sourceTree = "<group>"; };
 		8154F8962889110B005E1F23 /* GlassesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassesTableViewCell.swift; sourceTree = "<group>"; };
@@ -108,6 +124,18 @@
 		81C1745A28852714005D18D7 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		81C1745C2885279A005D18D7 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		81C1745F28853378005D18D7 /* AttensionModeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttensionModeTableViewController.swift; sourceTree = "<group>"; };
+		81C51D6528B5F07200305D47 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		81C51D6728B5F07A00305D47 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		81C51D6D28B5F25100305D47 /* Reuseable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reuseable.swift; sourceTree = "<group>"; };
+		81C51D6F28B5F2F700305D47 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		81C51D7228B5F5B400305D47 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		81C51D7428B5F5BC00305D47 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		81C51D7628B5F5CC00305D47 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		81C51D7828B5F61F00305D47 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		81C51D7C28B6059800305D47 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		81C51D7E28B6065A00305D47 /* APIKEY.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKEY.swift; sourceTree = "<group>"; };
+		81C51D8128B6075E00305D47 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		81C51D8A28B60AEB00305D47 /* Lable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lable.swift; sourceTree = "<group>"; };
 		81CF22DE28867B50009602F7 /* Shopping.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Shopping.storyboard; sourceTree = "<group>"; };
 		81CF22E028867B68009602F7 /* ShoppingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,6 +146,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				81A0E70028B3509400E9B089 /* RealmSwift in Frameworks */,
+				81C51D8528B607B200305D47 /* Alamofire in Frameworks */,
+				81C51D8828B607BF00305D47 /* SwiftyJSON in Frameworks */,
 				81A0E70928B352F100E9B089 /* Then in Frameworks */,
 				81A0E6FE28B3509400E9B089 /* Realm in Frameworks */,
 				814168FB2887AE7500A792A6 /* Toast in Frameworks */,
@@ -132,7 +162,6 @@
 		814168E728877E5900A792A6 /* Review */ = {
 			isa = PBXGroup;
 			children = (
-				814168E828877F8000A792A6 /* SecondReview.storyboard */,
 				814168EE28878C9E00A792A6 /* Movie.swift */,
 				814168F02887953300A792A6 /* MovieInfo.swift */,
 				814168EA288786FB00A792A6 /* SecondReviewTableViewController.swift */,
@@ -146,6 +175,7 @@
 			children = (
 				8112CB672886453000917014 /* UIViewController+Extension.swift */,
 				8112CB692886478C00917014 /* UITextField+Extension.swift */,
+				8147FFA128B6422000553432 /* FileManager + Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -212,8 +242,11 @@
 		81C174312884DDBA005D18D7 = {
 			isa = PBXGroup;
 			children = (
+				81C51D7C28B6059800305D47 /* .gitignore */,
+				81C51D8028B6074900305D47 /* APIManager */,
+				81C51D6C28B5F24600305D47 /* Protocol */,
 				81A0E70128B350E700E9B089 /* Realm */,
-				81CF22DD28867B2A009602F7 /* ShoppingList */,
+				81CF22DD28867B2A009602F7 /* Shopping */,
 				814169002887C1C900A792A6 /* BookPra */,
 				81C1743C2884DDBA005D18D7 /* TrendMedia */,
 				814168FF2887C16000A792A6 /* Trend */,
@@ -241,6 +274,7 @@
 				81C1743D2884DDBA005D18D7 /* AppDelegate.swift */,
 				81C1743F2884DDBA005D18D7 /* SceneDelegate.swift */,
 				81C174412884DDBA005D18D7 /* ViewController.swift */,
+				81C51D7E28B6065A00305D47 /* APIKEY.swift */,
 				81C174432884DDBA005D18D7 /* Main.storyboard */,
 				8112CB612886408100917014 /* Intro.storyboard */,
 				81C174482884DDBC005D18D7 /* LaunchScreen.storyboard */,
@@ -268,15 +302,72 @@
 			path = Practice;
 			sourceTree = "<group>";
 		};
-		81CF22DD28867B2A009602F7 /* ShoppingList */ = {
+		81C51D6428B5F05D00305D47 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				81CF22DE28867B50009602F7 /* Shopping.storyboard */,
+				81C51D7128B5F5AA00305D47 /* UI */,
+				81C51D6528B5F07200305D47 /* BaseViewController.swift */,
+				81C51D6728B5F07A00305D47 /* BaseView.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		81C51D6A28B5F1D300305D47 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				81234ABA28B4AFA2003C8A3B /* DetailViewController.swift */,
+				81C51D6F28B5F2F700305D47 /* DetailView.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		81C51D6B28B5F1F300305D47 /* ShoppingList */ = {
+			isa = PBXGroup;
+			children = (
+				814168E828877F8000A792A6 /* SecondReview.storyboard */,
 				81CF22E028867B68009602F7 /* ShoppingTableViewController.swift */,
 				81A0E70A28B3599F00E9B089 /* todoTableViewCell.swift */,
-				81234ABA28B4AFA2003C8A3B /* DataViewController.swift */,
 			);
 			path = ShoppingList;
+			sourceTree = "<group>";
+		};
+		81C51D6C28B5F24600305D47 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				81C51D6D28B5F25100305D47 /* Reuseable.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		81C51D7128B5F5AA00305D47 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				81C51D7628B5F5CC00305D47 /* Constants.swift */,
+				81C51D7828B5F61F00305D47 /* ImageView.swift */,
+				81C51D7228B5F5B400305D47 /* Color.swift */,
+				81C51D7428B5F5BC00305D47 /* Button.swift */,
+				81C51D8A28B60AEB00305D47 /* Lable.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		81C51D8028B6074900305D47 /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				81C51D8128B6075E00305D47 /* APIManager.swift */,
+			);
+			path = APIManager;
+			sourceTree = "<group>";
+		};
+		81CF22DD28867B2A009602F7 /* Shopping */ = {
+			isa = PBXGroup;
+			children = (
+				81C51D6B28B5F1F300305D47 /* ShoppingList */,
+				81C51D6A28B5F1D300305D47 /* Detail */,
+				81C51D6428B5F05D00305D47 /* Utility */,
+				81CF22DE28867B50009602F7 /* Shopping.storyboard */,
+			);
+			path = Shopping;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,6 +393,8 @@
 				81A0E6FF28B3509400E9B089 /* RealmSwift */,
 				81A0E70528B352E500E9B089 /* SnapKit */,
 				81A0E70828B352F100E9B089 /* Then */,
+				81C51D8428B607B200305D47 /* Alamofire */,
+				81C51D8728B607BF00305D47 /* SwiftyJSON */,
 			);
 			productName = TrendMedia;
 			productReference = 81C1743A2884DDBA005D18D7 /* TrendMedia.app */;
@@ -337,6 +430,8 @@
 				81A0E6FC28B3509400E9B089 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				81A0E70428B352E500E9B089 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				81A0E70728B352F100E9B089 /* XCRemoteSwiftPackageReference "Then" */,
+				81C51D8328B607B200305D47 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				81C51D8628B607BF00305D47 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = 81C1743B2884DDBA005D18D7 /* Products */;
 			projectDirPath = "";
@@ -363,6 +458,7 @@
 				81C174452884DDBA005D18D7 /* Main.storyboard in Resources */,
 				81CF22DF28867B50009602F7 /* Shopping.storyboard in Resources */,
 				81C1745B28852714005D18D7 /* Setting.storyboard in Resources */,
+				81C51D7D28B6059800305D47 /* .gitignore in Resources */,
 				814169022887C1F000A792A6 /* BookProject.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,26 +474,36 @@
 				8112CB662886440F00917014 /* SearchViewController.swift in Sources */,
 				8131162A2886E4390051D099 /* SearchTableViewController.swift in Sources */,
 				8154F895288910FA005E1F23 /* GlassesTableViewController.swift in Sources */,
+				81C51D8228B6075E00305D47 /* APIManager.swift in Sources */,
 				8112CB6E28864D9800917014 /* BucketlistTableViewCell.swift in Sources */,
+				81C51D6628B5F07200305D47 /* BaseViewController.swift in Sources */,
 				8112CB682886453000917014 /* UIViewController+Extension.swift in Sources */,
-				81234ABB28B4AFA2003C8A3B /* DataViewController.swift in Sources */,
+				81234ABB28B4AFA2003C8A3B /* DetailViewController.swift in Sources */,
 				8154F899288917E8005E1F23 /* GlassesViewController.swift in Sources */,
+				81C51D6E28B5F25100305D47 /* Reuseable.swift in Sources */,
 				81C1745D2885279A005D18D7 /* SettingTableViewController.swift in Sources */,
 				8112CB64288643F900917014 /* TrendViewController.swift in Sources */,
+				8147FFA228B6422000553432 /* FileManager + Extension.swift in Sources */,
+				81C51D7928B5F61F00305D47 /* ImageView.swift in Sources */,
 				81414F902889E571007A60CD /* SearchBookViewController.swift in Sources */,
 				81C1746028853378005D18D7 /* AttensionModeTableViewController.swift in Sources */,
 				81C174552884DE9F005D18D7 /* DatePickerViewController.swift in Sources */,
 				814168F328879AA100A792A6 /* RecommandCollectionViewController.swift in Sources */,
+				81C51D6828B5F07A00305D47 /* BaseView.swift in Sources */,
+				81C51D7328B5F5B400305D47 /* Color.swift in Sources */,
 				8112CB5C2886366000917014 /* ReviewTableViewController.swift in Sources */,
 				81C174422884DDBA005D18D7 /* ViewController.swift in Sources */,
 				814169042887C20300A792A6 /* BookCollectionViewCell.swift in Sources */,
 				8154F8892888E752005E1F23 /* TrendTableViewController.swift in Sources */,
 				814168F12887953300A792A6 /* MovieInfo.swift in Sources */,
 				8112CB6C28864B9900917014 /* BucketlistTableViewController.swift in Sources */,
+				81C51D8B28B60AEB00305D47 /* Lable.swift in Sources */,
+				81C51D7728B5F5CC00305D47 /* Constants.swift in Sources */,
 				813116282886E02B0051D099 /* SearchTableViewCell.swift in Sources */,
 				81A0E70B28B3599F00E9B089 /* todoTableViewCell.swift in Sources */,
 				814168EF28878C9E00A792A6 /* Movie.swift in Sources */,
 				81C1743E2884DDBA005D18D7 /* AppDelegate.swift in Sources */,
+				81C51D7F28B6065A00305D47 /* APIKEY.swift in Sources */,
 				8112CB6A2886478C00917014 /* UITextField+Extension.swift in Sources */,
 				814168F528879DFD00A792A6 /* RecommandCollectionViewCell.swift in Sources */,
 				81A0E70328B3510A00E9B089 /* RealmModel.swift in Sources */,
@@ -405,7 +511,9 @@
 				81CF22E128867B68009602F7 /* ShoppingTableViewController.swift in Sources */,
 				814169062887C21500A792A6 /* BookCollectionViewController.swift in Sources */,
 				8154F8972889110B005E1F23 /* GlassesTableViewCell.swift in Sources */,
+				81C51D7528B5F5BC00305D47 /* Button.swift in Sources */,
 				8154F89B28891F81005E1F23 /* WebViewController.swift in Sources */,
+				81C51D7028B5F2F700305D47 /* DetailView.swift in Sources */,
 				81C174592884FE3C005D18D7 /* HomeTableViewController.swift in Sources */,
 				814168ED2887872A00A792A6 /* SecondReviewTableViewCell.swift in Sources */,
 			);
@@ -667,6 +775,22 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		81C51D8328B607B200305D47 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		81C51D8628B607BF00305D47 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -699,6 +823,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 81A0E70728B352F100E9B089 /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
+		};
+		81C51D8428B607B200305D47 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 81C51D8328B607B200305D47 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		81C51D8728B607BF00305D47 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 81C51D8628B607BF00305D47 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
