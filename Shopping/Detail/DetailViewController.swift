@@ -9,6 +9,11 @@ import UIKit
 import RealmSwift
 import Kingfisher
 
+
+protocol ButtonTappedDelegate {
+    func ButtonTapped(tap: Bool)
+}
+
 class DetailViewController: BaseViewController {
     
     let mainView = DetailView()
@@ -18,9 +23,10 @@ class DetailViewController: BaseViewController {
     }
     
     var objectId: ObjectId?
-    
-    
+
     let localRealm = try! Realm()
+    
+    var tasks: Results<TodoList>!
     
     
     override func viewDidLoad() {
@@ -49,10 +55,20 @@ class DetailViewController: BaseViewController {
         let url = URL(string: photo?.photo ?? "데이터 없음")
         mainView.itemPhoto.kf.setImage(with: url)
         
+        
+        
       
     }
     
-  
-}
+
     
+}
+
+extension DetailViewController: ButtonTappedDelegate {
+    func ButtonTapped(tap: Bool) {
+        //
+    }
+    
+    
+}
 

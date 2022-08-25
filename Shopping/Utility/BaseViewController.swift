@@ -34,4 +34,12 @@ class BaseViewController: UIViewController {
         view.endEditing(true)
     }
     
+    func showAlert(title: String, button: String = "확인") { //매개변수 기본값
+        let alert = UIAlertController(title: title, message: "", preferredStyle: .alert)
+        let ok = UIAlertAction(title: button, style: .cancel)
+        alert.addAction(ok)
+        present(alert, animated: true)
+        
+    }
+    
 }

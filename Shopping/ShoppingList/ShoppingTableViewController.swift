@@ -21,6 +21,8 @@ class ShoppingTableViewController: UITableViewController {
     let localRealm = try! Realm()
     
     var imageUrl = ""
+    let receiveId: ObjectId? = nil
+    
     
     var todo: Results<TodoList>! {
         didSet {
@@ -54,8 +56,12 @@ class ShoppingTableViewController: UITableViewController {
         print("Realm is located at:", localRealm.configuration.fileURL!)
         tableView.rowHeight = 80
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Backup", style: .plain, target: self, action: #selector(backupButtonClicked))
+        
         let navi = navigationItem
         navi.leftBarButtonItem = UIBarButtonItem(title: "", image: UIImage(systemName: "line.3.horizontal"), primaryAction: nil, menu: menu)
+        
+        print("Realm is located at:", localRealm.configuration.fileURL!)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,6 +73,12 @@ class ShoppingTableViewController: UITableViewController {
     
     func fetchRealm() {
         todo = localRealm.objects(TodoList.self).sorted(byKeyPath: "date", ascending: false)
+    }
+    
+    @objc func backupButtonClicked() {
+        let sb = UIStoryboard(name: "SecondReview", bundle: nil)
+        guard let vc = sb.instantiateViewController(withIdentifier: BackupViewController.reuseIdentifier) as? BackupViewController else { return }
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func sortButtonClicked() {
@@ -162,7 +174,7 @@ class ShoppingTableViewController: UITableViewController {
     @objc func checkButtonClicked(_ sender: UIButton) {
         try! localRealm.write {
             todo[sender.tag].check = !todo[sender.tag].check
-            self.localRealm.create(TodoList.self, value: ["objectId": self.todo[sender.tag].objectId, "todo": "완료"], update: .modified)
+            //self.localRealm.create(TodoList.self, value: ["objectId": self.todo[sender.tag].objectId, "todo": "상세 내용 확인"], update: .modified)
         }
         tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .fade)
     }
@@ -172,6 +184,8 @@ class ShoppingTableViewController: UITableViewController {
             todo[sender.tag].star = !todo[sender.tag].star
         }
         tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .fade)
+        
+     
     }
     
 }

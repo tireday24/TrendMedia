@@ -243,6 +243,21 @@
             </objects>
             <point key="canvasLocation" x="3197" y="92"/>
         </scene>
+        <!--Backup View Controller-->
+        <scene sceneID="As9-Nc-HfM">
+            <objects>
+                <viewController storyboardIdentifier="BackupViewController" id="Yye-xT-oTf" customClass="BackupViewController" customModule="TrendMedia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ivq-hb-Gxp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ihH-ln-SlA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JzH-8a-LmC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4004" y="79"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="qkN-GX-uLk">
             <objects>

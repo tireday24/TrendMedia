@@ -74,6 +74,9 @@
 		81C51D8B28B60AEB00305D47 /* Lable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C51D8A28B60AEB00305D47 /* Lable.swift */; };
 		81CF22DF28867B50009602F7 /* Shopping.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81CF22DE28867B50009602F7 /* Shopping.storyboard */; };
 		81CF22E128867B68009602F7 /* ShoppingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CF22E028867B68009602F7 /* ShoppingTableViewController.swift */; };
+		81EA690C28B746F500138E7F /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 81EA690B28B746F500138E7F /* Zip */; };
+		81EA690F28B7482C00138E7F /* BackupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EA690E28B7482C00138E7F /* BackupView.swift */; };
+		81EA691128B7483700138E7F /* BackupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EA691028B7483700138E7F /* BackupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -138,6 +141,8 @@
 		81C51D8A28B60AEB00305D47 /* Lable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lable.swift; sourceTree = "<group>"; };
 		81CF22DE28867B50009602F7 /* Shopping.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Shopping.storyboard; sourceTree = "<group>"; };
 		81CF22E028867B68009602F7 /* ShoppingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewController.swift; sourceTree = "<group>"; };
+		81EA690E28B7482C00138E7F /* BackupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupView.swift; sourceTree = "<group>"; };
+		81EA691028B7483700138E7F /* BackupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +150,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81EA690C28B746F500138E7F /* Zip in Frameworks */,
 				81A0E70028B3509400E9B089 /* RealmSwift in Frameworks */,
 				81C51D8528B607B200305D47 /* Alamofire in Frameworks */,
 				81C51D8828B607BF00305D47 /* SwiftyJSON in Frameworks */,
@@ -243,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				81C51D7C28B6059800305D47 /* .gitignore */,
+				814168FC2887C0B400A792A6 /* Extension */,
 				81C51D8028B6074900305D47 /* APIManager */,
 				81C51D6C28B5F24600305D47 /* Protocol */,
 				81A0E70128B350E700E9B089 /* Realm */,
@@ -253,7 +260,6 @@
 				814168FE2887C14200A792A6 /* Search */,
 				814168FD2887C12100A792A6 /* Setting */,
 				81C1745E288527A3005D18D7 /* Practice */,
-				814168FC2887C0B400A792A6 /* Extension */,
 				814168E728877E5900A792A6 /* Review */,
 				81C174512884DE6B005D18D7 /* pra */,
 				81C1743B2884DDBA005D18D7 /* Products */,
@@ -363,11 +369,21 @@
 			isa = PBXGroup;
 			children = (
 				81C51D6B28B5F1F300305D47 /* ShoppingList */,
+				81EA690D28B7481800138E7F /* Backup */,
 				81C51D6A28B5F1D300305D47 /* Detail */,
 				81C51D6428B5F05D00305D47 /* Utility */,
 				81CF22DE28867B50009602F7 /* Shopping.storyboard */,
 			);
 			path = Shopping;
+			sourceTree = "<group>";
+		};
+		81EA690D28B7481800138E7F /* Backup */ = {
+			isa = PBXGroup;
+			children = (
+				81EA691028B7483700138E7F /* BackupViewController.swift */,
+				81EA690E28B7482C00138E7F /* BackupView.swift */,
+			);
+			path = Backup;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -395,6 +411,7 @@
 				81A0E70828B352F100E9B089 /* Then */,
 				81C51D8428B607B200305D47 /* Alamofire */,
 				81C51D8728B607BF00305D47 /* SwiftyJSON */,
+				81EA690B28B746F500138E7F /* Zip */,
 			);
 			productName = TrendMedia;
 			productReference = 81C1743A2884DDBA005D18D7 /* TrendMedia.app */;
@@ -432,6 +449,7 @@
 				81A0E70728B352F100E9B089 /* XCRemoteSwiftPackageReference "Then" */,
 				81C51D8328B607B200305D47 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				81C51D8628B607BF00305D47 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				81EA690A28B746F500138E7F /* XCRemoteSwiftPackageReference "Zip" */,
 			);
 			productRefGroup = 81C1743B2884DDBA005D18D7 /* Products */;
 			projectDirPath = "";
@@ -491,10 +509,12 @@
 				814168F328879AA100A792A6 /* RecommandCollectionViewController.swift in Sources */,
 				81C51D6828B5F07A00305D47 /* BaseView.swift in Sources */,
 				81C51D7328B5F5B400305D47 /* Color.swift in Sources */,
+				81EA690F28B7482C00138E7F /* BackupView.swift in Sources */,
 				8112CB5C2886366000917014 /* ReviewTableViewController.swift in Sources */,
 				81C174422884DDBA005D18D7 /* ViewController.swift in Sources */,
 				814169042887C20300A792A6 /* BookCollectionViewCell.swift in Sources */,
 				8154F8892888E752005E1F23 /* TrendTableViewController.swift in Sources */,
+				81EA691128B7483700138E7F /* BackupViewController.swift in Sources */,
 				814168F12887953300A792A6 /* MovieInfo.swift in Sources */,
 				8112CB6C28864B9900917014 /* BucketlistTableViewController.swift in Sources */,
 				81C51D8B28B60AEB00305D47 /* Lable.swift in Sources */,
@@ -791,6 +811,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		81EA690A28B746F500138E7F /* XCRemoteSwiftPackageReference "Zip" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/Zip.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -833,6 +861,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 81C51D8628B607BF00305D47 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
+		};
+		81EA690B28B746F500138E7F /* Zip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 81EA690A28B746F500138E7F /* XCRemoteSwiftPackageReference "Zip" */;
+			productName = Zip;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
