@@ -11,6 +11,7 @@ import Zip
 
 class BackupViewController: BaseViewController {
     
+    
     let mainView = BackupView()
     
     override func loadView() {
@@ -22,6 +23,7 @@ class BackupViewController: BaseViewController {
         mainView.backUpBoutton.addTarget(self, action: #selector(backupButton), for: .touchUpInside)
         mainView.restoreButton.addTarget(self, action: #selector(restoreButton), for: .touchUpInside)
         fetchDocumentZipFile()
+        mainView.backupProgressView.progress = 0.0
     }
     
     override func configureUI() {
@@ -142,6 +144,7 @@ extension BackupViewController: UIDocumentPickerDelegate{
                 
                 try Zip.unzipFile(fileURL, destination: path, overwrite: true, password: nil, progress: { progress in
                     print("progress: \(progress)")
+                    self.mainView.backupProgressView.setProgress(Float(progress), animated: true)
                 }, fileOutputHandler: { unzippedFile in
                     print("unzippedFile: \(unzippedFile)")
                     self.showAlert(title: "복구가 완료되었습니다")

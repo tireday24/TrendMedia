@@ -27,6 +27,13 @@ class BackupView: BaseView {
         $0.rowHeight = 80
     }
     
+    let backupProgressView: UIProgressView = {
+        let view = UIProgressView()
+        view.progress = 0.0
+        view.progressTintColor = .blue
+        return view
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -36,14 +43,14 @@ class BackupView: BaseView {
     }
     
     override func configureUI() {
-        [backUpBoutton, restoreButton,backUpTableView].forEach {
+        [backUpBoutton, restoreButton,backUpTableView, backupProgressView].forEach {
             self.addSubview($0)
         }
     }
     
     override func setConstraints() {
         backUpBoutton.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide).inset(100)
+            make.top.equalTo(backupProgressView.snp.bottom).offset(20)
             make.width.equalTo(100)
             make.height.equalTo(50)
             make.leading.equalTo(20)
@@ -63,6 +70,13 @@ class BackupView: BaseView {
             make.trailing.equalTo(-20)
             make.leading.equalTo(20)
             make.bottom.equalTo(self.safeAreaLayoutGuide)
+        }
+        
+        backupProgressView.snp.makeConstraints { make in
+            make.top.equalTo(100)
+            make.leading.equalTo(20)
+            make.trailing.equalTo(-20)
+            
         }
     }
 }
