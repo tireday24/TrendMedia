@@ -84,7 +84,7 @@ class ShoppingTableViewController: UITableViewController {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
-            
+            print("디스패치 큐 오류")
         }
         print(imageUrl, "fffffff")
         let todo = TodoList(todo: todoTextField.text ?? "데이터를 입력 해주세요", date: Date(), photo: imageUrl)
