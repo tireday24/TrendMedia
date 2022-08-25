@@ -123,8 +123,11 @@ extension BackupViewController: UIDocumentPickerDelegate{
                 //파일 경로 확실해서 , 도큐먼트 위치(도큐먼트 안), 덮어씌우는게 편함, 앱상에서는 비밀번호 건. 적 거의 없음 / 프로그래스는 로딩뷰를 채워줄 수 있는 뷰를 보여줄 수 있음 /
                 try Zip.unzipFile(fileURL, destination: path, overwrite: true, password: nil, progress: { progress in
                     print("progress: \(progress)")
+                    self.view.isUserInteractionEnabled = false
+                    self.mainView.backupProgressView.setProgress(Float(progress), animated: true)
                 }, fileOutputHandler: { unzippedFile in
                     print("unzippedFile: \(unzippedFile)")
+                    self.view.isUserInteractionEnabled = true
                     self.showAlert(title: "복구가 완료되었습니다")
                 })
                 
@@ -144,9 +147,11 @@ extension BackupViewController: UIDocumentPickerDelegate{
                 
                 try Zip.unzipFile(fileURL, destination: path, overwrite: true, password: nil, progress: { progress in
                     print("progress: \(progress)")
+                    self.view.isUserInteractionEnabled = false
                     self.mainView.backupProgressView.setProgress(Float(progress), animated: true)
                 }, fileOutputHandler: { unzippedFile in
                     print("unzippedFile: \(unzippedFile)")
+                    self.view.isUserInteractionEnabled = true
                     self.showAlert(title: "복구가 완료되었습니다")
                 })
                 
